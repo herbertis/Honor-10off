@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HONOR - 10% OFF</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================= RESET ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #111;
+            overflow-x: hidden;
+        }
+
+        /* ================= FORM FEEDBACK ================= */
+
+.form-feedback {
+    margin-top: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+    display: broke;
+    animation: fadeUp .60s ease forwards;
+}
+
+.form-feedback.success {
+    display: block;
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #34d399;
+}
+
+.form-feedback.error {
+    display: block;
+    background: #fef2f2;
+    color: #7f1d1d;
+    border: 1px solid #f87171;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+        /* ================= LAYOUT ================= */
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 100px 40px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 80px;
+            position: relative;
+        }
+
+        /* ================= LEFT SIDE ================= */
+
+        .left {
+            flex: 1;
+            max-width: 520px;
+        }
+
+        .badge-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .badge-top img {
+            height: 28px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #2563eb;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 35px;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature img {
+            height: 38px;
+        }
+
+        .feature span {
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        .divider {
+            width: 1px;
+            height: 40px;
+            background: #e5e5e5;
+        }
+
+        /* ================= FORM ================= */
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+            outline: none;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .checkbox input {
+            width: auto;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        /* ================= RIGHT SIDE ================= */
+
+        .right {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    footer {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    color: #000;
+    border-top: 1px solid #e5e5e5;
+    background: #fff;
+    }
+
+        /* Selo */
+.selo {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    width: 158px;
+    z-index: 10;
+}
+
+        /* Phones */
+
+        .phone {
+            position: absolute;
+            width: 300px;
+            transition: transform .3s ease;
+        }
+
+        .phone.roxo {
+            transform: rotate(10deg);
+            z-index: 3;
+            right: -40px;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        .phone.verde {
+            transform: rotate(-5deg);
+            left: 90px;
+            z-index: 2;
+            animation: float2 6s ease-in-out infinite;
+        }
+
+        /* Floating animations */
+
+        @keyframes float1 {
+            0% {
+                transform: rotate(15deg) translateY(0px);
+            }
+
+            50% {
+                transform: rotate(15deg) translateY(-25px);
+            }
+
+            100% {
+                transform: rotate(15deg) translateY(0px);
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                transform: rotate(-5deg) translateY(0px);
+            }
+
+            50% {
+                transform: rotate(-5deg) translateY(-25px);
+            }
+
+            100% {
+                transform: rotate(-5deg) translateY(0px);
+            }
+        }
+
+        
+    .desk-img{
+    display: block;
+    width: 12rem;
+    margin-bottom: 2rem;
+   }
+
+   .mob-img{
+    display: none;
+   }
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1100px) {
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 25px;
+    }
+
+    /* 👇 COLOCA OS PHONES NO TOPO */
+    .right {
+        order: -1;
+        margin-bottom: 36rem;
+        width: 100%;
+        height: 380px;
+        position: relative;
+    }
+
+    /* CENTRALIZA OS PHONES */
+    .phone {
+        position: absolute;
+        width: 260px;
+        left: 35%;
+        top: 60px;
+    }
+
+    .phone.roxo {
+        transform: translateX(-60%) rotate(10deg);
+        right: auto;
+    }
+
+    .phone.verde {
+        transform: translateX(-40%) rotate(-5deg);
+        left: 3ch;
+    }
+
+    .selo {
+        top: 20rem;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        width: 110px;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .desk-img{
+    display: block;
+   }
+
+   .mob-img{
+    display: none;
+   }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:600px) {
+
+.selo {
+        width: 112px;
+    }
+
+
+    .selo {
+        top: 20rem;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        width: 110px;
+    }
+
+   .desk-img{
+    display: none;
+   }
+
+   .mob-img{
+    display: block;
+    width: 10rem;
+   }
+
+   .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+    justify-content: center;
+}
+
+    .right {
+        height: 300px;
+    }
+
+    .phone {
+        width: 188px;
+        top: 100px;
+    }
+
+    .phone.roxo {
+        transform: translateX(-58%) rotate(8deg);
+    }
+
+    .phone.verde {
+        transform: translateX(-42%) rotate(-5deg);
+    }
+
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .badge-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT -->
+        <div class="left">
+
+            <img src="./honor-logo-black.svg" alt="" srcset="" class="desk-img">
+
+
+            <h1>Cadastre-se e ganhe um <span>cupom</span></h1>
+
+            <p class="subtitle">de 10% OFF na sua primeira compra.</p>
+
+            <form id="leadForm">
+                <input type="email" placeholder="E-mail:" required>
+          
+                <div class="checkbox">
+                    
+                    <input type="checkbox" required> 
+                    <label>Eu concordo com o <a href="https://www.honor.com.br/conteudo/rodape-final/aviso-de-privacidade" target="_blank">Aviso de Privacidade</a></label>
+                   
+                </div>
+               
+                <button type="submit">QUERO MEU CUPOM</button>
+            <div class="form-feedback" aria-live="polite"></div>
+                <p style="color: #888888; font-size: 0.7rem; margin-bottom: 2rem;">A Honor está compremetida em proteger e respeitar a sua privacidade e usaremos suas informações pessoais apenas para administrar a sua conta e fornecer os produtos e serviços que vocês nos solicitou. Ocasionalemte. Se você consentir com nossa contato por esse motivo, marque a maneira de contato.</p>
+            </form>
+
+            <div class="badge-top">
+            
+                <div class="features">
+            
+                    <div class="feature">
+                        <img src="Frete Grátis.png">
+                    </div>
+            
+                    <div class="divider"></div>
+            
+                    <div class="feature">
+                        <img src="Entrega Rápida.png">
+                    </div>
+            
+                </div>
+            
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+             <img src="./honor-logo-black.svg" alt="" srcset="" class="mob-img desk-img">
+            <img src="Selo 10_ OFF.png" class="selo">
+
+            <img src="HONOR Magic7 Lite (roxo)-10.png" class="phone roxo">
+            <img src="HONOR X7d 5G (verde)-07.png" class="phone verde">
+
+        </div>
+    </div>
+
+     <footer style="font-size:0.9rem">Copyright © Honor Device Co., Ltd. 2020-2026. Todos os direitos reservados.</footer>
+
+<script>
+    document.getElementById("leadForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const feedback = this.querySelector(".form-feedback");
+        const email = this.querySelector("input[type='email']");
+        const checkbox = this.querySelector("input[type='checkbox']");
+
+        feedback.className = "form-feedback";
+        feedback.style.display = "block";
+
+        if (!email.value || !checkbox.checked) {
+            feedback.classList.add("error");
+            feedback.innerText = "Por favor, preencha o e-mail e aceite o Aviso de Privacidade.";
+            return;
+        }
+
+        // Simulação de sucesso
+        feedback.classList.add("success");
+        feedback.innerText = "✅ Cadastro realizado com sucesso! Seu cupom será enviado por e-mail.";
+
+        this.reset();
+
+        // Opcional: esconder mensagem após alguns segundos
+        setTimeout(() => {
+            feedback.style.display = "none";
+        }, 6000);
+    });
+</script>
+
+
+</body>
+</html>
